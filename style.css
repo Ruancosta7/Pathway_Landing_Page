@@ -1,0 +1,1127 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: #fffaff;
+    font-family: "poppins", sans-serif;
+}
+
+span {
+    color: #3685fb;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    font-weight: 500;
+    color: #212121;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    display: grid;
+    height: 100vh;
+    grid-template-areas:
+        "header contact-btn contact-btn "
+        "main-img main-img main-img"
+        "main main main"
+        "plan-trip plan-trip plan-trip"
+        "destinations destinations destinations"
+        "travel-images travel-images travel-images"
+        "trips trips trips"
+        "travels travels travels"
+        "trip-gallery trip-gallery text-trip"
+        "trip-contact trip-contact trip-contact"
+        "end-page end-page end-page"
+        "copy copy copy"
+    ;
+}
+
+header {
+
+    grid-area: header;
+    display: flex;
+    flex-direction: row;
+}
+
+header a {
+    font-weight: bold;
+    font-size: 20px;
+    margin: 4px 10px;
+    color: #0d213f;
+}
+
+.main-nav {
+    display: none;
+    grid-area: main-nav;
+}
+
+.contact-btn {
+    display: flex;
+    justify-content: flex-end;
+    margin: 4px 10px;
+    grid-area: contact-btn;
+}
+
+.contact-btn a {
+    background-color: #3685fb;
+    padding: 2px 8px;
+    border-radius: 20px;
+    color: rgb(255, 255, 255);
+}
+
+.main-img {
+    height: auto;
+    margin-left: 35px;
+    justify-content: center;
+    display: flex;
+    grid-area: main-img;
+}
+
+.img1 {
+    animation: left-right 2s;
+    border: 5px solid white;
+    border-radius: 20px;
+    height: 300px;
+    display: flex;
+    align-self: flex-end;
+}
+
+.img2 {
+    animation: right-left 2s;
+    border: 5px solid white;
+    border-radius: 20px;
+    display: flex;
+    align-self: flex-end;
+    transform: translateX(-50px);
+    height: 200px;
+}
+
+.book {
+    color: #3685fb;
+}
+
+main {
+    animation: left-right 2s forwards;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 35vh;
+    margin: 0px 63px;
+    grid-area: main;
+}
+
+main h3 {
+    font-size: 2em;
+    color: #0d213f;
+}
+main p{
+    font-size: 1.1em;
+}
+
+.plan-trip {
+    height: 6vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: plan-trip;
+}
+
+.plan-trip a {
+    background-color: #3685fb;
+    padding: 2px 8px;
+    border-radius: 20px;
+    color: rgb(255, 255, 255);
+}
+
+.trip-img1 {
+    animation: growing 2s;
+    height: 50px;
+    margin: 0px 5px;
+    clip-path: circle();
+}
+
+.destinations {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 17vh;
+    grid-area: destinations;
+}
+
+.travel-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: travel-images;
+    margin-left: 0px;
+}
+
+.travel-images img {
+    margin: 0px 5px;
+    height: 170px;
+    border-radius: 20px;
+}
+
+.destinations {
+    margin-left: 10px;
+}
+
+.trips {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    height: 15vh;
+    text-align: center;
+    grid-area: trips;
+}
+
+.travels {
+    gap: 20px 0px;
+    grid-area: travels;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+.card {
+    display: grid;
+    height: 350px;
+    width: 300px;
+    grid-template-columns: 6%;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "img-trip-card img-trip-card img-trip-card"
+        "h4 h4 h4"
+        "star rate rate"
+        "price price button"
+    ;
+    align-content: start;
+    box-shadow: 0px 0px 10px gray;
+    border-radius: 20px;
+}
+
+.card>.star {
+    position: relative;
+    top: 2 px;
+    margin-left: 10px;
+    display: flex;
+    align-self: center;
+    height: 18px;
+    grid-area: star;
+}
+
+.card>h4 {
+    font-size: 17px;
+    margin-left: 10px;
+    grid-area: h4;
+}
+
+.rate {
+    margin-left: 10px;
+    position: relative;
+    top: 3px;
+    display: flex;
+    align-self: center;
+    grid-area: rate;
+}
+
+.price {
+    font-size: 20px;
+    margin-left: 10px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    grid-area: price;
+}
+
+.img-trip-card-card {
+    grid-area: img-trip-card1;
+}
+
+.card>.img-trip-card>img {
+    width: 300px;
+}
+
+.card>.btn {
+    padding: 0px 7px;
+    margin-right: 10px;
+    height: 30px;
+    display: flex;
+    align-self: center;
+    justify-content: flex-end;
+    grid-area: button;
+}
+
+.btn>button {
+    color: white;
+    border-radius: 10px;
+    border: none;
+    padding: 0px 7px;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.card-price button {
+    display: flex;
+    border: none;
+    padding: 2px 5px;
+    border-radius: 10px;
+    font-size: 15px;
+    margin: 0px 10px 10px 0px;
+}
+
+.travels>div img {
+    height: 200px;
+    border-radius: 20px 20px 2px 2px;
+}
+
+.travels>div {
+    margin: 15px 0px;
+}
+
+.trip-gallery {
+    padding: 0px 5px;
+    grid-area: trip-gallery;
+    display: grid;
+    grid-template-areas:
+        "gallery-1 gallery-2"
+        "gallery-1 gallery-3"
+    ;
+}
+
+.travel-images img {
+    animation: growing_1024 2s;
+}
+
+.travels img {
+    height: 140px;
+}
+
+.gallery-1 {
+    box-shadow: 0px 0px 10px gray;
+    border-radius: 20px;
+    align-self: center;
+    grid-area: gallery-1;
+    justify-self: center;
+    width: 120px;
+    height: 220px;
+}
+
+.gallery-2 {
+    box-shadow: 0px 0px 10px gray;
+    border-radius: 20px;
+    grid-area: gallery-2;
+    height: 100px;
+    width: 120px;
+    align-self: end;
+    justify-self: center;
+    margin: 5px 5px;
+
+}
+
+.gallery-3 {
+    margin: 5px 5px;
+    height: 165px;
+    box-shadow: 0px 0px 10px gray;
+    border-radius: 20px;
+    grid-area: gallery-3;
+    width: 120px;
+    justify-self: center;
+}
+
+.text-trip {
+    padding: 5px;
+    grid-area: text-trip;
+}
+
+.text-trip h3 {
+    color: #0d213f;
+    font-size: 20px;
+}
+
+.text-trip a {
+    background-color: #3685fb;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 20px;
+}
+
+.trip-contact {
+    height: 200px;
+    margin-left: 10px;
+    flex-wrap: wrap;
+    grid-area: trip-contact;
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+}
+
+.trip-contact h3 {
+    display: flex;
+    flex-direction: column;
+}
+
+.trip-contact p {
+    display: flex;
+    flex-direction: column;
+}
+
+.trip-contact input {
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    align-items: center;
+    box-shadow: 0px 0px 10px gray;
+}
+
+.trip-contact input:focus {
+    box-shadow: 0 0 10px gray;
+    outline: 0;
+}
+
+.trip-contact button {
+    display: flex;
+    flex-direction: row;
+    width: 70px;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    justify-content: center;
+    transform: translateX(-40px);
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+}
+
+button {
+    font-family: "Poppins", sans-serif;
+    background-color: #3685fb;
+}
+
+.end-page {
+    background-color: #0d213f;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    grid-area: end-page;
+    gap: 10px;
+    padding: 10px;
+    height: auto;
+}
+
+.end-page>div>p {
+    color: white;
+}
+
+.pathway {
+    display: flex;
+    flex-grow: 1;
+    padding: 5px 0px;
+    flex-direction: column;
+}
+
+.pathway p {
+    font-weight: 300;
+}
+
+.support {
+    flex-grow: 2;
+    padding: 5px 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.support p {
+    font-weight: 300;
+}
+
+.adress {
+    padding: 5px 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.adress p {
+    font-weight: 300;
+}
+
+.copy {
+    flex-grow: 5;
+    color: white;
+    display: grid;
+    flex-direction: column;
+    font-size: 12px;
+    text-align: center;
+    align-items: flex-end;
+}
+
+/* Animações e Keyframes */
+@keyframes left-right {
+    from {
+        opacity: 0;
+        transform: translateX(-200px);
+        transition: 300ms;
+    }
+
+    to {
+        transform: translateX(0px);
+        transition: 300ms;
+    }
+}
+
+@keyframes right-left {
+    from {
+        opacity: 0;
+        transform: translateX(200px);
+        transition: 300ms;
+    }
+
+    to {
+        transform: translateX(-50px);
+        transition: 300ms;
+    }
+}
+
+.plan-trip>img {
+    animation: rotate 2s;
+}
+
+.plan-trip>img {
+    animation: growing 2s;
+}
+
+@keyframes growing {
+    0% {
+        opacity: 0;
+        transform: scale(0.6);
+        transform: 300ms;
+    }
+
+    100% {
+        transform: scale(1);
+        transform: 300ms;
+    }
+}
+
+@keyframes growing_1024 {
+    0% {
+        opacity: 0;
+        transform: scale(.5);
+    }
+}
+
+.destinations {
+    animation: left-right 2s;
+}
+
+.trip-btn {
+    animation: left-right 2s;
+}
+
+.story {
+    animation: right-left2 2s;
+}
+
+.card {
+    animation: growing_1024 2s;
+}
+
+.trip-gallery img {
+    animation: growing_1024 2s;
+}
+
+.text-trip {
+    animation: text-trip 2s;
+}
+
+.trip-contact {
+    animation: left-right_1024 2s;
+}
+
+.end-page>div {
+    animation: growing_1024 2s;
+}
+
+@keyframes text-trip {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+}
+
+@keyframes right-left2 {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+header a:active {
+    transform: scale(0.9);
+    transition: 250ms;
+}
+
+.main-nav a:hover {
+    border-bottom: 3px solid #16224c;
+    transition: .2s;
+}
+
+.contact-btn a:active {
+    transform: scale(0.9);
+    transition: 250ms;
+}
+
+.card:active {
+    transform: scale(1.1);
+    transition: 300ms;
+}
+
+/*  */
+
+@media (min-width:767px) {
+    header a {
+        font-size: 35px;
+    }
+
+    .contact-btn {
+        padding: 8px 0px;
+    }
+
+    .contact-btn a {
+        font-size: 30px;
+    }
+    .main-img{
+        height: 44vh;
+    }
+    .img1 {
+        box-shadow: 0px 0px 10px gray;
+        border: 8px solid white;
+        height: 400px;
+    }
+
+    .img2 {
+        box-shadow: 0px 0px 10px gray;
+        border: 8px solid white;
+        height: 260px;
+    }
+
+    .book {
+        font-size: 25px;
+    }
+
+    main {
+        justify-content: center;
+        height: 37vh;
+    }
+
+    main h3 {
+        font-size: 50px;
+    }
+
+    main p {
+        font-size: 25px;
+    }
+
+    .plan-trip {
+        height: 10vh;
+        padding: 10px 0px;
+    }
+
+    .plan-trip>a {
+        padding: 4px 20px;
+    }
+
+    .plan-trip a, p {
+        font-size: 30px;
+    }
+
+    .plan-trip img {
+        height: 90px;
+    }
+
+    .destinations {
+        padding: 10px;
+    }
+
+    .destinations h3 {
+        font-size: 32px;
+    }
+
+    .travel-images img {
+        height: 300px;
+    }
+
+    .trips {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        height: 30vh;
+    }
+
+    .trips h3 {
+        font-size: 30px;
+    }
+
+    .trips p {
+        font-size: 34px;
+    }
+
+    .destinations p {
+        font-size: 30px;
+    }
+
+    .gallery-1 {
+        height: 320px;
+        width: 200px;
+    }
+
+    .gallery-2 {
+        display: grid;
+        justify-self: start;
+        height: 120px;
+        width: 150px;
+    }
+
+    .gallery-3 {
+        display: grid;
+        justify-self: start;
+        height: 200px;
+        width: 150px;
+    }
+
+    .text-trip h3 {
+        font-size: 35px;
+    }
+
+    .text-trip P {
+        font-size: 25px;
+    }
+
+    .text-trip a {
+        font-size: 22px;
+    }
+
+    .trip-contact {
+        height: 30vh;
+    }
+
+    .trip-contact h3 {
+        font-size: 35px;
+    }
+
+    .trip-contact input {
+        font-size: 25px;
+        width: 19em;
+        border-radius: 30px;
+    }
+
+    .trip-contact button {
+        display: flex;
+        align-items: center;
+        font-size: 28px;
+        height: 2.1em;
+        padding: 0px 5px;
+        width: 5em;
+        border-radius: 30px;
+    }
+
+    .pathway h3 {
+        font-size: 35px;
+    }
+
+    .support h3 {
+        font-size: 35px;
+    }
+
+    .adress h3 {
+        font-size: 35px;
+    }
+
+    .copy p {
+        font-size: 17px;
+    }
+
+    .card {
+        display: grid;
+        height: 350px;
+        width: 300px;
+        grid-template-columns: 6%;
+        grid-template-rows: auto auto auto 100px;
+        grid-template-areas:
+            "img-trip-card img-trip-card img-trip-card"
+            "h4 h4 h4"
+            "star rate rate"
+            "price price button"
+        ;
+        align-content: start;
+        width: 400px;
+        height: 500px;
+        box-shadow: 0px 0px 10px gray;
+        border-radius: 20px;
+        gap: 10px 0px;
+    }
+
+    .star {
+        position: relative;
+        top: 2px;
+    }
+
+    .card button {
+        font-size: 30px;
+    }
+
+    .card h4 {
+        font-size: 25px;
+    }
+
+    .card>.price {
+        font-size: 25px;
+    }
+
+    .card>.img-trip-card>img {
+        width: 400px;
+        height: 250px;
+    }
+
+    .btn>button {
+        color: rgb(255, 255, 255);
+        border-radius: 10px;
+        border: none;
+        padding: 0px 7px;
+        font-weight: 500;
+        font-size: 25px;
+    }
+
+    .card>.btn {
+        height: 40px;
+        width: 150px;
+        display: flex;
+        justify-self: flex-end;
+    }
+
+    .trip-contact {
+        gap: 20px 0px;
+    }
+}
+
+/* desktop */
+
+@media (min-width:1023px) {
+    .container {
+        display: grid;
+        height: 100vh;
+        grid-template-columns: 30% 40% 30%;
+        grid-template-areas:
+            "header main-nav contact-btn"
+            "main-img main-img main-img"
+            "main main main"
+            "plan-trip plan-trip plan-trip"
+            "destinations destinations destinations"
+            "travel-images travel-images travel-images"
+            "trips trips trips"
+            "travels travels travels"
+            "trip-gallery trip-gallery text-trip"
+            "trip-contact trip-contact trip-contact"
+            "end-page end-page end-page"
+            "copy copy copy"
+        ;
+    }
+    .main-img{
+        height: 55vh;
+    }
+    main {
+        animation: growing_1024 2s;
+        height: 25vh;
+        text-align: center;
+    }
+
+    main>h3 {
+        font-size: 40px;
+    }
+
+    main>p {
+        font-size: 30px;
+    }
+
+    .img1 {
+        animation: left-right_1024 2s;
+    }
+
+    .img2 {
+        animation: right-left_1024 2s;
+    }
+
+    .main-nav {
+        display: flex;
+        align-items: center;
+        font-size: 28px;
+        justify-content: center;
+        grid-area: main-nav;
+    }
+
+    .main-nav a {
+        color: #0d213f;
+        font-size: 20px;
+        margin: 0px 22px;
+    }
+
+    .contact-btn a {
+        font-size: 20px;
+    }
+
+    .plan-trip {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 10vh;
+    }
+
+    .plan-trip>.trip-btn {
+        display: flex;
+        justify-content: center;
+        margin-left: 0px;
+        font-size: 23px;
+    }
+
+    .plan-trip>.trip-img1 {
+        margin: 0px 10px;
+        display: flex;
+        justify-content: center;
+        height: 70px;
+    }
+
+    .plan-trip>p {
+        display: flex;
+        justify-content: center;
+        margin-right: 0px;
+        font-size: 23px;
+    }
+
+    .destinations {
+        height: 20vh;
+        text-align: center;
+    }
+
+    .trips {
+        height: auto;
+    }
+
+    .travel-images {
+        height: 70vh;
+    }
+
+    .travels {
+        flex-basis: 50%;
+        margin: 0 auto;
+        padding: 40px 0px;
+        height: auto;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        gap: 40px 0px;
+    }
+
+    .travels>div {
+        display: grid;
+        margin: 0px 30px;
+    }
+
+    .trips h3 {
+        color: #212121;
+        font-size: 40px;
+    }
+
+    .travel-images img {
+        box-shadow: 0px 0px 10px gray;
+        animation: growing_1024 2s;
+        height: 400px;
+        margin: 0px 20px;
+    }
+
+    .card {
+        grid-template-rows: auto 80px auto 80px;
+        width: 350px;
+    }
+
+    .card>h4 {
+        font-weight: 600;
+        letter-spacing: 2px;
+        font-size: 27px;
+    }
+
+    .card>.img-trip-card {
+        width: 350px;
+    }
+
+    .card>.img-trip-card>img {
+        width: 350px;
+    }
+
+    .travels>div>a>button {
+        cursor: pointer;
+    }
+
+    .gallery-1 {
+        height: 500px;
+        width: 300px;
+        display: grid;
+        justify-self: end;
+    }
+
+    .gallery-2 {
+        margin: 5px 10px;
+        width: 256px;
+        height: 200px;
+    }
+
+    .gallery-3 {
+        margin: 5px 10px;
+        width: 250px;
+        height: 290px;
+    }
+
+    .text-trip {
+        display: grid;
+        align-self: center;
+    }
+
+    .text-trip>h3 {
+        font-size: 45px;
+    }
+
+    .text-trip>p {
+        font-size: 30px;
+    }
+
+    .text-trip>a {
+        text-align: center;
+        width: 100px;
+    }
+
+    .trip-contact {
+        height: 50vh;
+    }
+
+    .trip-contact>button {
+        cursor: pointer;
+    }
+
+    .contact-btn a:hover {
+        transform: scale(1.1);
+    }
+
+    header a:active {
+        transform: scale(.9);
+        transition: 200ms ease;
+    }
+
+    .travel-images img:hover {
+        transform: scale(1.2);
+        transition: 500ms ease;
+    }
+
+    .card:hover {
+        transform: scale(1.1);
+        transition: 300ms;
+    }
+
+    .text-trip>a:hover {
+        transform: scale(1.1);
+        transition: 300ms;
+    }
+
+    .text-trip>a:active {
+        transform: scale(.9);
+    }
+
+    @keyframes left-right_1024 {
+        0% {
+            opacity: 0;
+            transform: translateX(-500px);
+        }
+    }
+
+    @keyframes right-left_1024 {
+        0% {
+            opacity: 0;
+            transform: translateX(500px);
+        }
+    }
+}
+
+@media (min-width:1230px) {
+    .travels {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+}
+
+@media (min-width:1440px) {
+    .travels {
+        display: grid;
+        grid-template-columns: repeat(4, 25%);
+    }
+    .end-page{
+        display: grid;
+        grid-template-columns: 40% 30% 30%;
+        grid-template-areas: 
+        "pathway support adress"
+        "copy copy copy"
+        ;
+    }
+    .pathway{
+        padding: 10px 50px;
+    }
+    .adress{
+        padding: 10px 50px;
+    }
+    .support{
+        padding: 10px 50px;
+    }
+    .copy{
+        grid-area: copy;
+    }
+    .trips{
+        height: 20vh;
+    }
+    .travels{
+        height: 80vh;
+    }
+    .trip-contact {
+        display: grid;
+        grid-template-columns: 25%;
+        grid-template-areas: 
+        "h3 h3 h3"
+        "p p p "
+        "input button button"
+        ;
+    }
+    .trip-contact h3{
+        grid-area: h3;
+    }
+    .trip-contact p{
+        grid-area: p;
+    }
+    .trip-contact button{
+        grid-area: button;
+    }
+}
