@@ -847,7 +847,7 @@ header a:active {
         ;
     }
     .main-img{
-        height: 55vh;
+        height: fit-content;
     }
     main {
         animation: growing_1024 2s;
