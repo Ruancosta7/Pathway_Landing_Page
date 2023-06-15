@@ -1089,6 +1089,15 @@ header a:active {
         "copy copy copy"
         ;
     }
+    main{
+        height: 30vh;
+    }
+    main h3{
+        font-size: 50px;
+    }
+    main > p{
+        font-size: 40px;
+    }
     .pathway{
         padding: 10px 50px;
     }
