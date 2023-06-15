@@ -114,7 +114,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 35vh;
+    height: fit-content;
     margin: 0px 63px;
     grid-area: main;
 }
